@@ -15,11 +15,14 @@ class Login extends Component {
       noValidate
       autoComplete="off"
     >
+      
     <div>
       <TextField id="outlined-basic" label="Enter EmailID" variant="outlined" /><br/><br/>
       <TextField id="outlined-basic" label="Enter Password" variant="outlined" /><br/><br/>
-      <Button variant="contained" href="#">Login</Button>
+      <Button variant="contained" href="#">Submit</Button>
+      <p>New User! Create account.</p><Button variant="contained" href="signup">Register</Button>
     </div>
+
     </Box>
         
       </>
