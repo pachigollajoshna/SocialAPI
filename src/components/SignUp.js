@@ -30,8 +30,9 @@ export default class SignUp extends React.Component{
     if(this.state.email==='' || regex.test(this.state.email) === false){
       alert('please enter valid email')
     }
-    if(this.state.password===''){
-      alert('please enter  password')
+    const password = new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
+    if(this.state.password==='' || password.test(this.state.password)===false){
+      alert('please enter  password min 8 characters')
     }
     if(this.state.password===this.state.confirmpassword){
       alert('please enter same password')
@@ -52,7 +53,7 @@ export default class SignUp extends React.Component{
       <TextField id="email" name="email" label="Enter EmailID" variant="outlined" value={this.state.email} onChange={this.handleChange} /><br/><br/>
       <TextField id="password" name="password"label="Enter Password" variant="outlined" value={this.state.password} onChange={this.handleChange}/><br/><br/>
       <TextField id="confirmpassword" name="confirmpassword"label="Confirm Password" variant="outlined" value={this.state.confirmpassword} onChange={this.handleChange}/><br/><br/>
-      <Button variant="contained" href="#">Submit</Button>
+      <Button variant="contained" href="#" onClick={this.validateForm}>Submit</Button>
       <p>Already have a account. Just Log In!</p>
       <Button variant="contained" href="login">Login</Button><br/>
 
