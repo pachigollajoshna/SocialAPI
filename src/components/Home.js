@@ -3,13 +3,13 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Profile from './Profile';
 import Tabs from '@mui/material/Tabs';
-
-
 import Posts from './Posts';
 import { Link } from '@mui/material';
+// import { getThemeProps } from '@mui/system';
 
-export default function Home() {
-  return (
+export default function Home(props) {
+  if(props.isLoggedIn === "true")
+    return (
     <>
     <Box sx={{ width: '100%' }}>
       <Tabs aria-label="nav tabs example">
@@ -24,6 +24,13 @@ export default function Home() {
     <Posts/><br/>
     <Posts/><br/>
     <Posts/>
+
     </>
   );
+  else 
+      return(
+        <>
+        <p>Please login or signup to view posts.</p>
+        </>
+      )
 }
