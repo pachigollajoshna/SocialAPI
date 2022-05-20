@@ -6,6 +6,7 @@ import Tabs from '@mui/material/Tabs';
 
 
 import Posts from './Posts';
+import { Link } from '@mui/material';
 
 export default function Home() {
   return (
@@ -13,8 +14,8 @@ export default function Home() {
     <Box sx={{ width: '100%' }}>
       <Tabs aria-label="nav tabs example">
       <Button color="inherit" href=''>Home</Button>
-      <Button color="inherit" href='login'>Login</Button>
-          <Button color="inherit" href='signup'>Sign Up</Button>
+      <Button color="inherit" href='login'><Link to="/login">Login</Link></Button>
+      <Button color="inherit" href='signup'><Link to="/signup">Sign Up</Link></Button>
       </Tabs>
     </Box>
           
