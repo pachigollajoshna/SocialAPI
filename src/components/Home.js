@@ -31,6 +31,11 @@ export default function Home(props) {
       return(
         <>
         <p>Please login or signup to view posts.</p>
+      <Button color="inherit" href='login'><Link to="/login">Login</Link></Button>
+      <Button color="inherit" href='signup'><Link to="/signup">Sign Up</Link></Button>
         </>
       )
 }
+
+
+
