@@ -5,9 +5,38 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 
-export default function Profile() {
+export default class Profile extends React.Component{
+  constructor(){
+    super();
+    this.state={enableEdit:false}
+    this.enableEditComponent=this.enableEditComponent.bind(this);
+    this.disableEditComponent=this.disableEditComponent.bind(this);
+  }
+  enableEditComponent(){
+    console.log(this.state.enableEdit);
+    this.setState({
+      enableEdit:true
+    })
+  }
+  disableEditComponent(){
+    this.setState({
+      enableEdit:false
+    })
+  }
+  render(){
+  if(this.state.enableEdit)
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <div>
+      Name:<input type="text"/><br/><br/>
+      Age:<input type="number"/><br/><br/>
+      Interests:<input type="text"/><br/><br/>
+      <Button onClick={this.disableEditComponent}>Done</Button>
+    </div>
+  )
+  else
+    return(
+      <div>
+        <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -28,10 +57,12 @@ export default function Profile() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button size="small" color="primary" onClick={this.enableEditComponent}>
           Edit Profile
         </Button>
       </CardActions>
     </Card>
-  );
+      </div>
+    )
+}
 }
